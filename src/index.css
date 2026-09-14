@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DIYA & SHALOM NIKKAH INVITATION — REFINED LUXURY STATIONERY
+   ========================================================================== */
+
+:root {
+  --bg-ivory: #FAF7EE;
+  --bg-ivory-light: #FDFBF7;
+  --bg-ivory-card: #FCFAF4;
+  --bg-emerald-band: #103328;
+  
+  --emerald-neutral: #1A3B32;
+  --emerald-dark: #122B24;
+  --emerald-soft: #234D42;
+
+  --gold-warm: #C4A052;
+  --gold-light: #E0C77A;
+  --gold-pale: #F5ECC9;
+  --gold-border: rgba(196, 160, 82, 0.45);
+
+  --text-charcoal: #332E28;
+  --text-muted: #6E665D;
+}
+
+/* Hide Scrollbar completely on all viewports */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+body {
+  background-color: var(--bg-ivory);
+  color: var(--text-charcoal);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+.font-arabic {
+  font-family: "Amiri", "Reem Kufi", serif;
+}
+.font-sans {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.font-script {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+}
+
+/* Tilted Layered Frame Styling for Couple Photo */
+.tilted-gold-card-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  animation: photoBreathe 7s ease-in-out infinite alternate;
+}
+
+@keyframes photoBreathe {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.tilted-gold-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: #E8DDB8;
+  border: 1px solid rgba(196, 160, 82, 0.65);
+  transform: rotate(3deg) translateY(4px) translateX(3px);
+  box-shadow: 0 12px 28px rgba(26, 59, 50, 0.1);
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tilted-gold-card-front {
+  position: relative;
+  z-index: 10;
+  border-radius: 4px;
+  background: #FFFDF9;
+  border: 1px solid rgba(196, 160, 82, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tilted-gold-card-wrapper:hover .tilted-gold-card-back {
+  transform: rotate(4deg) translateY(6px) translateX(4px);
+}
+
+.tilted-gold-card-wrapper:hover .tilted-gold-card-front {
+  transform: translateY(-2px);
+}
+
+/* Luxury 3 Details Cards Styling */
+.ref-card-clean {
+  background: #FCFAF5;
+  border: 1px solid rgba(196, 160, 82, 0.35);
+  border-radius: 6px;
+  box-shadow: 0 2px 14px rgba(196, 160, 82, 0.06);
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ref-card-clean:hover {
+  border-color: rgba(196, 160, 82, 0.75);
+  box-shadow: 0 8px 24px rgba(196, 160, 82, 0.16);
+  transform: translateY(-3px);
+}
+
+/* Floating Location Pulse */
+@keyframes pulseRing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.18); opacity: 0.25; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.pulse-location-ring {
+  animation: pulseRing 2.8s ease-in-out infinite;
+}
+
+/* Lantern Swaying & Glowing Keyframes */
+@keyframes lanternSwayLeft {
+  0% { transform: rotate(4.5deg); }
+  50% { transform: rotate(-3.8deg); }
+  100% { transform: rotate(4.5deg); }
+}
+
+@keyframes lanternSwayRight {
+  0% { transform: rotate(-4.2deg); }
+  50% { transform: rotate(3.6deg); }
+  100% { transform: rotate(-4.2deg); }
+}
+
+@keyframes lanternGlowPulse {
+  0%, 100% { opacity: 0.55; filter: drop-shadow(0 0 10px rgba(196, 160, 82, 0.4)); }
+  50% { opacity: 0.95; filter: drop-shadow(0 0 22px rgba(245, 236, 201, 0.85)); }
+}
+
+.lantern-sway-left {
+  transform-origin: top center;
+  animation: lanternSwayLeft 5.5s ease-in-out infinite;
+}
+
+.lantern-sway-right {
+  transform-origin: top center;
+  animation: lanternSwayRight 6s ease-in-out infinite;
+}
+
+.lantern-glow {
+  animation: lanternGlowPulse 3.5s ease-in-out infinite;
+}
+
+/* Pure Minimal Tap Text Breathing Animation */
+@keyframes tapPromptBreathe {
+  0%, 100% { opacity: 0.4; transform: translateY(0px) scale(0.98); }
+  50% { opacity: 0.85; transform: translateY(-2px) scale(1.02); }
+}
+
+.animate-tap-prompt {
+  animation: tapPromptBreathe 3s ease-in-out infinite;
+}
+
+/* Celestial Background Rings */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinSlowReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 80s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinSlowReverse 95s linear infinite;
+}
