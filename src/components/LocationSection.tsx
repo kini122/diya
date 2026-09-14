@@ -58,13 +58,8 @@ export const LocationSection: React.FC = () => {
         </h2>
 
         {/* Location Subtitle */}
-        <p className="font-script font-normal text-xl sm:text-2xl text-[#C4A052] mb-4">
+        <p className="font-script font-normal text-xl sm:text-2xl text-[#C4A052] mb-8">
           Oachira
-        </p>
-
-        {/* Quote */}
-        <p className="font-serif text-base sm:text-lg text-[#332E28]/85 max-w-sm mx-auto leading-relaxed mb-8 font-normal">
-          Your presence is the most beautiful gift.
         </p>
 
         {/* Get Directions Button */}
